@@ -65,7 +65,7 @@ const newTime = computed(() => {
   const minutes = getMinutes(time.value)
   const multiplierFloat = parseFloat(multiplier.value.replace(',', '.')) || 1
   const hours = Math.round(multiplierFloat * minutes / 0.6) / 100
-  return hours ? `${hours}h` : null
+  return hours ? `${hours}h` : ''
 })
 
 </script>
