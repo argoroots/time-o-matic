@@ -1,2 +1,2 @@
 # time-o-matic
-Tome O Matic
+Time-O-Matic
