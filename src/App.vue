@@ -8,7 +8,7 @@
         v-model="time"
         class="text-4xl text-center outline-none"
         autofocus
-        placeholder=" 1d 2h 45m"
+        placeholder="1d 2h 45m"
       >
       <div class="my-2 text-xl text-center text-gray-500">
         X
@@ -26,6 +26,7 @@
         class="text-4xl text-center outline-none bg-white"
         readonly
         disabled
+        placeholder="..."
       >
     </div>
   </div>
@@ -62,8 +63,9 @@ const getMinutes = (str) => {
 
 const newTime = computed(() => {
   const minutes = getMinutes(time.value)
-  const multiplierFloat = parseFloat(multiplier.value.replace(',', '.'))
-  return `${Math.round(multiplierFloat * minutes / 0.6) / 100}h`
+  const multiplierFloat = parseFloat(multiplier.value.replace(',', '.')) || 1
+  const hours = Math.round(multiplierFloat * minutes / 0.6) / 100
+  return hours ? `${hours}h` : null
 })
 
 </script>
