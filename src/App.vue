@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen flex flex-wrap content-center">
     <h1 class="w-full mb-12 font-bold text-5xl text-center text-blue-600">
-      Time-O-Matic
+      Time-O-Matic 0.1
     </h1>
     <input
       v-model="time"
