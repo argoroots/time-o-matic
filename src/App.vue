@@ -80,6 +80,8 @@ const getMinutes = (str) => {
 }
 
 const newTime = computed(() => {
+  plausible('Calculate')
+
   const minutes = getMinutes(time.value)
   const multiplierFloat = parseFloat(multiplier.value.replace(',', '.')) || 1
   const hours = Math.round(multiplierFloat * minutes / 0.6) / 100
@@ -87,6 +89,8 @@ const newTime = computed(() => {
 })
 
 const copyResult = () => {
+  plausible('Copy')
+
   navigator.clipboard.writeText(newTime.value)
 }
 
