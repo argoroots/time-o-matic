@@ -80,7 +80,7 @@ const getMinutes = (str) => {
 }
 
 const newTime = computed(() => {
-  plausible('Calculate')
+  window.plausible('Calculate')
 
   const minutes = getMinutes(time.value)
   const multiplierFloat = parseFloat(multiplier.value.replace(',', '.')) || 1
@@ -89,7 +89,7 @@ const newTime = computed(() => {
 })
 
 const copyResult = () => {
-  plausible('Copy')
+  window.plausible('Copy')
 
   navigator.clipboard.writeText(newTime.value)
 }
