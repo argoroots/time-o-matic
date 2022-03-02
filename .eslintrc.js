@@ -15,6 +15,5 @@ module.exports = {
     'vue'
   ],
   rules: {
-    'no-unused-vars': ['error', { varsIgnorePattern: 'props' }]
   }
 }
