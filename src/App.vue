@@ -30,7 +30,7 @@
     <div
       class="w-full text-center my-2 cursor-pointer text-gray-500 hover:text-blue-600"
       title="Copy to Clipboard"
-      @click="copyResult()"
+      @click="copyResult"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -88,10 +88,9 @@ const newTime = computed(() => {
   return hours ? `${hours}h` : ''
 })
 
-const copyResult = () => {
+function copyResult () {
   window.plausible('Copy')
 
   navigator.clipboard.writeText(newTime.value)
 }
-
 </script>
