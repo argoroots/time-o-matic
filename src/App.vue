@@ -58,8 +58,12 @@ const time = ref('3h 24m')
 
 const getValue = (values, key) => {
   const keyValues = values.filter(x => x.includes(key))
-  if (keyValues.length === 0) { return 0 }
-  return keyValues.map(x => parseFloat(x) || 0).reduce((p, c) => p + c)
+
+  if (keyValues.length === 0) {
+    return 0
+  } else {
+    return keyValues.map(x => parseFloat(x) || 0).reduce((p, c) => p + c)
+  }
 }
 
 const getMinutes = (str) => {
@@ -85,6 +89,7 @@ const newTime = computed(() => {
   const minutes = getMinutes(time.value)
   const multiplierFloat = parseFloat(multiplier.value.replace(',', '.')) || 1
   const hours = Math.round(multiplierFloat * minutes / 0.6) / 100
+
   return hours ? `${hours}h` : ''
 })
 
