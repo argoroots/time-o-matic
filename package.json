@@ -2,6 +2,7 @@
   "name": "time-o-matic",
   "version": "1.0.0",
   "private": true,
+  "description": "Time-O-Matic site",
   "author": "Argo Roots <argo@roots.ee>",
   "license": "MIT",
   "scripts": {
